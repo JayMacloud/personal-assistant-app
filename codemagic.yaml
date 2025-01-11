@@ -8,5 +8,5 @@ workflows:
       - echo "Starting iOS build..."
       - gem install cocoapods
       - pod cache clean --all
-      - pod install --repo-update --project-directory=App
+      - pod install --repo-update
       - xcodebuild -project App/PersonalAssistantApp.xcodeproj -scheme PersonalAssistantApp -sdk iphoneos -configuration Release clean build
