@@ -1,0 +1,15 @@
+workflows:
+  ios-build:
+    name: Build iOS App
+    environment:
+      vars:
+        OPENAI_API_KEY: $OPENAI_API_KEY
+    scripts:
+      - echo "Starting iOS build..."
+    dependencies:
+      - pod install
+    ios:
+      project: "PersonalAssistantApp.xcodeproj"
+      scheme: "PersonalAssistantApp"
+      distribution: "app-store"
+
