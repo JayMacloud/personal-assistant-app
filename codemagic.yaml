@@ -6,6 +6,7 @@ workflows:
         OPENAI_API_KEY: $OPENAI_API_KEY
     scripts:
       - echo "Starting iOS build..."
-      - gem install cocoapods
+      - gem install bundler
+      - bundle install
       - pod install --project-directory=App
       - xcodebuild -project App/PersonalAssistantApp.xcodeproj -scheme PersonalAssistantApp -sdk iphoneos -configuration Release clean build
