@@ -7,5 +7,5 @@ workflows:
     scripts:
       - echo "Starting iOS build..."
       - gem install cocoapods
-      - pod install
-      - xcodebuild -project App/PersonalAssistantApp.xcodeproj -scheme PersonalAssistantApp -sdk iphoneos -configuration AppStoreDistribution clean build CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+      - pod install --project-directory=App
+      - xcodebuild -project App/PersonalAssistantApp.xcodeproj -scheme PersonalAssistantApp -sdk iphoneos -configuration Release clean build
