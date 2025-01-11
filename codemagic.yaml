@@ -6,10 +6,9 @@ workflows:
         OPENAI_API_KEY: $OPENAI_API_KEY
     scripts:
       - echo "Starting iOS build..."
-    dependencies:
-      before_install:
-        - gem install cocoapods
+      - gem install cocoapods
+      - pod install
     build:
-      ios:
-        project_path: "App"
-        scheme: "PersonalAssistantApp"
+      xcode_project: "App/PersonalAssistantApp.xcodeproj"
+      xcode_scheme: "PersonalAssistantApp"
+      export_method: "app-store"
