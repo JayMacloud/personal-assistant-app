@@ -7,9 +7,9 @@ workflows:
     scripts:
       - echo "Starting iOS build..."
     dependencies:
-      - pod install
-    ios:
-      project: "PersonalAssistantApp.xcodeproj"
-      scheme: "PersonalAssistantApp"
-      distribution: "app-store"
-
+      before_install:
+        - gem install cocoapods
+    build:
+      ios:
+        project_path: "App"
+        scheme: "PersonalAssistantApp"
